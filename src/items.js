@@ -9,6 +9,7 @@ export class Items {
         this.notes = notes; // string
         this.isDone = isDone // boolean value
     }
+    // add setters later so users can update individual items
     get title() {
         return this.title;
     }
