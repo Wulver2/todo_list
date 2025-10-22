@@ -9,4 +9,7 @@ export class Items {
         this.notes = notes; // string
         this.isDone = isDone // boolean value
     }
+    get title() {
+        return this.title;
+    }
 }
