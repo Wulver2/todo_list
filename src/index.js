@@ -1,6 +1,13 @@
 import "./style.css";
 import { Items } from "./items.js";
-
+function rename() {
+    // prompts user to rename lists and allows them to keep the original
+    // name in case user changes their mind
+    var listName = document.getElementById("listName");
+    var origName = listName.textContent;
+    var newName = prompt("Rename list to :", origName);
+    listName.textContent = newName;
+}
 function addToList(item) {
     list = document.getElementsByClassName("list");
     // only working with one list for now, but will have multiple later
@@ -19,4 +26,9 @@ newItemButton.addEventListener("click", function() {
     // give prompt to user to create new item and add to list
     createItem();
 });
-console.log("here!")
+
+var nameButton = document.getElementById("rename");
+nameButton.addEventListener("click", function() {
+    rename();
+});
+console.log("here!");
