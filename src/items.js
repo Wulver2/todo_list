@@ -10,7 +10,5 @@ export class Items {
         this.isDone = isDone // boolean value
     }
     // add setters later so users can update individual items
-    get title() {
-        return this.title;
-    }
+
 }

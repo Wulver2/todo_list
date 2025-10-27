@@ -6,9 +6,11 @@
     font-weight: 400;
     font-style: normal;
   }
+
 * {
     font-family: "EB Garamond", serif;
 }
+
 body {
     background-color: rgb(103, 104, 112);
 }

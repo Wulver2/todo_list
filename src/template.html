@@ -10,7 +10,7 @@
             <!--may change rename to be an image instead-->
             <button id="rename">Rename</button>
             <button id="newItem">add new todo</button>
-            <form id="popup" method="post" style="display: none;">
+            <form id="popup" style="display: none;">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title">
                 <label for="description">Description:</label>
@@ -22,8 +22,9 @@
                 <input type="text" id="priority" name="priority"><br>
                 <label for="notes">Notes:</label>
                 <input type="text" id="notes" name="notes">
+                <input type="submit" value="submit">
             </form>
-            <div class="list">
+            <div id="list">
 
             </div>
         </div>
