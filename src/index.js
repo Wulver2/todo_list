@@ -58,18 +58,21 @@ newItemButton.addEventListener("click", function() {
     // give prompt to user to create new item and add to list
     var popup = document.getElementById("popup");
     popup.style.display = "block";
-    popup.addEventListener("submit", function(e) {
-        e.preventDefault();
-        this.style.display = "none"
-        let t = title.value;
-        let d = description.value;
-        let date = dueDate.value;
-        let p = priority.value;
-        let n = notes.value;
-        createItem(t, d, date, p, n);
-        displayList();
-    })
 });
+
+var popup = document.getElementById("popup");
+popup.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    this.style.display = "none"
+    let t = title.value;
+    let d = description.value;
+    let date = dueDate.value;
+    let p = priority.value;
+    let n = notes.value;
+    createItem(t, d, date, p, n);
+    displayList();
+})
 
 var nameButton = document.getElementById("rename");
 nameButton.addEventListener("click", function() {
