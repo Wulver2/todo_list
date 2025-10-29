@@ -14,3 +14,13 @@
 body {
     background-color: rgb(103, 104, 112);
 }
+
+#list {
+display: flex;
+flex-direction: column;
+}
+
+label.check {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
