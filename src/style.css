@@ -24,3 +24,12 @@ label.check {
     font-size: 20px;
     margin-bottom: 5px;
 }
+
+.collapsible {
+    outline: none;
+    border: none;
+}
+
+.todoInfo {
+    display: none;
+}

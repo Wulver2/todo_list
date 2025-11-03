@@ -24,6 +24,28 @@ function createItem(title, description, dueDate, priority, notes) {
     addToList(newItem);
 }
 
+function removeToDo() {
+
+}
+
+function collapsibleEvent() {
+    var coll = document.getElementsByClassName("collapsible");
+
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            //will change as more info is added to collapsible
+            console.log("drop")
+            let info = this.firstElementChild;
+            if (info.style.display == "block") {
+                info.style.display = "none";
+            }
+            else {
+                info.style.display = "block";
+            }
+        });
+    }
+}
+
 function displayList() {
     let list = document.getElementById("list");
     list.innerHTML = "";
@@ -36,12 +58,28 @@ function displayList() {
         label.textContent = todos[i].title;
         let inp = document.createElement("input");
         inp.setAttribute("type", "checkbox");
-        let s = document.createElement("span");
-
+        //let s = document.createElement("span");
+        let remove = document.createElement("button");
+        remove.setAttribute("class", "remove");
+        remove.textContent = "Remove";
+        // will add a collapsible box that includes other item info 
+        // Ex. notes, description
+        // will make the button appear as a downward arrow later
+        let collapse = document.createElement("button");
+        collapse.setAttribute("class", "collapsible");
+        collapse.textContent = "placeholder";
+        let descript = document.createElement("p");
+        descript.setAttribute("class", "todoInfo");
+        descript.textContent = todos[i].description;
         label.appendChild(inp);
-        label.appendChild(s);
+
+        //label.appendChild(s);
+        label.appendChild(remove);
+        collapse.appendChild(descript);
+        label.appendChild(collapse);
         list.appendChild(label);
     }
+    collapsibleEvent();
     console.log("item");
 }
 
@@ -60,6 +98,7 @@ newItemButton.addEventListener("click", function() {
     popup.style.display = "block";
 });
 
+//popup form event
 var popup = document.getElementById("popup");
 popup.addEventListener("submit", function(e) {
     e.preventDefault();
